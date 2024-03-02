@@ -51,6 +51,8 @@ class Home extends Component {
   render() {
     const {list} = this.state
     // console.log('list', list)
+    const visitedCountries = list.filter(eachItem => eachItem.isVisited)
+
     return (
       <AppComponent>
         <Heading>Countries</Heading>
@@ -87,7 +89,7 @@ class Home extends Component {
           >
             Visited Countries
           </h1>
-          {list.length > 0 ? (
+          {visitedCountries.length > 0 ? (
             <VisitedListDisplay>
               {list.map(eachItem =>
                 eachItem.isVisited ? (
